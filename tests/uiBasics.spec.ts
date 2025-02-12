@@ -33,3 +33,32 @@ test('Negative Test', async ({ page }) => {
     console.log(errorMessage);
     await expect(page.locator("[style*='block']")).toContainText('Incorrect');
 });
+
+test('Price validation of Samsung Note 8', async ({ page }) => {
+    await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
+    await page.locator('#username').fill('rahulshettyacademy');
+    await page.locator('#password').fill('learning');
+    await page.locator("label[class='customradio'] input").first().check();
+    await page.locator('#terms').check();
+    await page.locator('#signInBtn').click();
+    const price = await page.locator('.card-body h5').nth(1).textContent();
+    expect(price).toBe('$24.99');
+});
+
+test('Add all products in a list and add 1 product in checkout to validate', async ({ page }) => {
+    await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
+    await page.locator('#username').fill('rahulshettyacademy');
+    await page.locator('#password').fill('learning');
+    await page.locator("label[class='customradio'] input").first().check();
+    await page.locator('#terms').check();
+    await page.locator('#signInBtn').click();
+    const cardTitlesElement = await page.$$('.card-title>a');
+    console.log(cardTitlesElement);
+    for(const eachElement of cardTitlesElement) {
+        const title = await eachElement.textContent();
+        console.log(title);
+    }
+    const addButtons = await page.locator('button.btn');
+    await addButtons.filter({hasText: 'Add '}).first().click();
+    await expect(await page.locator('a.nav-link.btn.btn-primary')).toContainText('Checkout ( 1 )')
+});

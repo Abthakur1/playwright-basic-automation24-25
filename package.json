@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
-    "test-ui": "npx playwright test --headed"
+    "test-ui": "npx playwright test --headed",
+    "test-sauce-demo": "npx playwright test --headed tests/sauceDemo.spec.ts"
   },
   "keywords": [],
   "author": "",

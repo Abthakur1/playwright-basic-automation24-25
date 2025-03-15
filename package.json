@@ -7,7 +7,8 @@
     "test": "npx playwright test",
     "test-ui": "npx playwright test --headed",
     "test-sauce-demo": "npx playwright test --headed tests/sauceDemo.spec.ts",
-    "test-specific": "npx playwright test --headed tests/testDataUsingFixture.spec.ts"
+    "test-specific": "npx playwright test --headed tests/testDataUsingFixture.spec.ts",
+    "test-ui-api-integration": "npx playwright test --headed tests/webApiTest.spec.ts"
   },
   "keywords": [],
   "author": "",

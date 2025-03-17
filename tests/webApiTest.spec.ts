@@ -24,7 +24,7 @@ test.beforeAll(async () => {
 test("Client App Test", async ({page}) =>{
   await page.addInitScript(value=>{      // ==> to store the cookies in local storage
     window.localStorage.setItem('token', value );
-  }, token)
+  }, token)           //The purpose of this code is to store the authentication token in the browser's local storage before the page loads. This way, when the page is loaded, it already has the token in local storage, which can be used for authenticated
   
   await page.goto('https://rahulshettyacademy.com/client/');
   const expectedList = [

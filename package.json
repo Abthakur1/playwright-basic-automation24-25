@@ -8,7 +8,9 @@
     "test-ui": "npx playwright test --headed",
     "test-sauce-demo": "npx playwright test --headed tests/sauceDemo.spec.ts",
     "test-specific": "npx playwright test --headed tests/UiComponents.spec.ts",
-    "test-ui-api-integration": "npx playwright test --headed tests/webApiTest.spec.ts"
+    "test-ui-api-integration": "npx playwright test --headed tests/webApiTest.spec.ts",
+    "test-api": "npx playwright test tests/apiBasics.spec.ts",
+     "test-mock-api": "npx playwright test --headed tests/mockApi.spec.ts"
   },
   "keywords": [],
   "author": "",
